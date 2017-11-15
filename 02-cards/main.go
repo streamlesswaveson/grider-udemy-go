@@ -1,13 +1,18 @@
 package main
 
+
 // go run main.go deck.go
 
 func main()  {
 
 	cards := newDeck()
 
-	hand, remaining := deal(cards, 5)
+	//fmt.Println(cards.toString())
 
-	hand.print()
-	remaining.print()
+	cards.saveToFile("testcards.txt")
+
+	othercards := newDeckFromFile("testcards.txt")
+
+	othercards.print()
+
 }
